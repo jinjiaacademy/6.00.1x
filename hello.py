@@ -182,20 +182,20 @@ Created on Wed Jan 25 22:37:05 2023
 
 
 
-s = 'azcbobobegghakl'
+# s = 'azcbobobegghakl'
 
-longest = ""
-current = ""
-for i in range(len(s)):
-    if i == 0:
-        current = s[i]
-    elif s[i] >= s[i-1]:
-        current += s[i]
-    else:
-        if len(current) > len(longest):
-            longest = current
-        current = s[i]
-if len(current) > len(longest):
-    longest = current
+# longest = ""
+# current = ""
+# for i in range(len(s)):
+#     if i == 0:
+#         current = s[i]
+#     elif s[i] >= s[i-1]:
+#         current += s[i]
+#     else:
+#         if len(current) > len(longest):
+#             longest = current
+#         current = s[i]
+# if len(current) > len(longest):
+#     longest = current
 
-print(longest)
+# print(longest)
