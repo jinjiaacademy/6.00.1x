@@ -12,36 +12,47 @@ prints the largest odd number among them. If none of them are odd,
 it should print the smallest value of the three.
 """
 
-x = int(input('Enter x: '))
-y = int(input('Enter y: '))
-z = int(input('Enter z: '))
+# x = int(input('Enter x: '))
+# y = int(input('Enter y: '))
+# z = int(input('Enter z: '))
 
-# Solution 1
+# # # Solution 1
 
-if x % 2 != 0 and y % 2 != 0 and z % 2 != 0:
-    print(max(x, y, z))
-if x % 2 != 0 and y % 2 != 0 and z % 2 == 0:
-    print(max(x, y))
-if x % 2 != 0 and y % 2 == 0 and z % 2 != 0:
-    print(max(x, z))
-if x % 2 != 0 and y % 2 == 0 and z % 2 == 0:
-    print(x)
-if x % 2 == 0 and y % 2 != 0 and z % 2 != 0:
-    print(max(y, z))
-if x % 2 == 0 and y % 2 != 0 and z % 2 == 0:
-    print(y)
-if x % 2 == 0 and y % 2 == 0 and z % 2 != 0:
-    print(z)
-if x % 2 == 0 and y % 2 == 0 and z % 2 == 0:
-    print(min(x, y, z))
+# if x % 2 != 0 and y % 2 != 0 and z % 2 != 0:
+#     print(max(x, y, z))
+# if x % 2 != 0 and y % 2 != 0 and z % 2 == 0:
+#     print(max(x, y))
+# if x % 2 != 0 and y % 2 == 0 and z % 2 != 0:
+#     print(max(x, z))
+# if x % 2 != 0 and y % 2 == 0 and z % 2 == 0:
+#     print(x)
+# if x % 2 == 0 and y % 2 != 0 and z % 2 != 0:
+#     print(max(y, z))
+# if x % 2 == 0 and y % 2 != 0 and z % 2 == 0:
+#     print(y)
+# if x % 2 == 0 and y % 2 == 0 and z % 2 != 0:
+#     print(z)
+# if x % 2 == 0 and y % 2 == 0 and z % 2 == 0:
+#     print(min(x, y, z))
     
-# Solution 2
+# # Solution 2
 
-answer = min(x, y, z)
-if x % 2 != 0:
-    answer = x
-if y % 2 != 0 and y > answer:
-    answer = y
-if z % 2 != 0 and z > answer:
-    answer = z
-print(answer)
+# answer = min(x, y, z)
+# if x % 2 != 0:
+#     answer = x
+# if y % 2 != 0 and y > answer:
+#     answer = y
+# if z % 2 != 0 and z > answer:
+#     answer = z
+# print(answer)
+
+"""
+Write code that asks the user to enter their birthday in the form
+mm/dd/yyyy, and then prints a string of the form 'You were born in 
+the year yyyy.'
+"""
+
+# dob = input('Enter your birthday (mm/dd/yyyy): ')
+# year = dob[-4:]
+# print(f'You were born in the year {year}.')
+
