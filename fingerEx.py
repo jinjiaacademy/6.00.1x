@@ -94,16 +94,17 @@ loop that is a primality test nested inside a for loop that iterates
 over the odd integers between 3 and 999.
 """
 
-total = 0
+# total = 0
 
-for num in range(3, 1000, 2):
-    is_prime = True
-    for div in range(2, num):
-        if num % div == 0:
-            is_prime = False
-            break
-    if is_prime:
-        total += num
+# for num in range(3, 1000, 2):
+#     is_prime = True
+#     for div in range(2, num):
+#         if num % div == 0:
+#             is_prime = False
+#             break
+#     if is_prime:
+#         total += num
         
-print(total)
-        
+# print(total)
+
+       
