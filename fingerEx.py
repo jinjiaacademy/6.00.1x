@@ -56,3 +56,45 @@ the year yyyy.'
 # year = dob[-4:]
 # print(f'You were born in the year {year}.')
 
+"""
+Replace the comment in the following code with a while loop
+"""
+# num_x = int(input('How many times should I print the letter X? '))
+# to_print = ''
+# # concatenate X to to_print num_x times
+# while num_x > 0:
+#     to_print += 'X'
+#     # print(to_print)
+#     num_x -= 1
+# print(to_print)
+
+"""
+Write a program that asks the user to input 10 integers, and then
+prints the largest odd number that was entered. If no odd number
+was entered, it should print a message to that effect.
+"""
+# largest_odd = 0
+# loops = 0
+
+# while loops < 10:
+#     num = int(input('Enter a number: '))
+#     if num % 2 != 0 and num > largest_odd:
+#         largest_odd = num
+#     loops += 1
+
+# if largest_odd:
+#     print(f'The largest odd number was entered is {largest_odd}.')
+# else:
+#     print('No odd number was entered.')
+
+"""
+Write a program that prints the sum of the prime numbers greater
+than 2 and less than 1000. Hint: you probably want to use a for 
+loop that is a primality test nested inside a for loop that iterates
+over the odd integers between 3 and 999.
+"""
+total = 0
+
+for odd in range(3, 1000, 2):
+    for div in range(odd):
+        print(div)
