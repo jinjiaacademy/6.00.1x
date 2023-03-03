@@ -93,8 +93,17 @@ than 2 and less than 1000. Hint: you probably want to use a for
 loop that is a primality test nested inside a for loop that iterates
 over the odd integers between 3 and 999.
 """
+
 total = 0
 
-for odd in range(3, 1000, 2):
-    for div in range(odd):
-        print(div)
+for num in range(3, 1000, 2):
+    is_prime = True
+    for div in range(2, num):
+        if num % div == 0:
+            is_prime = False
+            break
+    if is_prime:
+        total += num
+        
+print(total)
+        
