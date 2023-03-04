@@ -24,7 +24,7 @@ Figure 2-7 Squaring an integer, the hard way
 #     ans = ans + abs(x)
 # print(f'{x} * {x} = {ans}')
 
-# Find a positive integer that is divisible by both 11 and 12
+# # Find a positive integer that is divisible by both 11 and 12
 # x = 1
 # while True:
 #     print(x)
@@ -33,4 +33,13 @@ Figure 2-7 Squaring an integer, the hard way
 #     x += 1
     
 # print(x, 'is divisible by 11 and 12.')
+
+# x = int(input('Enter an integer: '))
+# if x % 2 == 0:
+#     print('')
+#     print('Even')
+# else:
+#     print('')
+#     print('Odd')
+# print('Done with conditional.')
 
