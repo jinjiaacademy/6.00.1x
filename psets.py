@@ -19,6 +19,10 @@ Number of vowels: 5
 """
 
 
+
+
+
+
 """
 Problem 2
 Assume s is a string of lower case characters.
@@ -28,6 +32,11 @@ program should print
 
 Number of times bob occurs is: 2
 """
+
+
+
+
+
 
 
 """
@@ -44,3 +53,7 @@ if s = 'abcbcd', then your program should print
 
 Longest substring in alphabetical order is: abc
 """
+
+
+
+
