@@ -127,23 +127,23 @@ enumeration
 """
 Figure 3-5 Using bisection search to approximate square root
 """
-x = -25
-epsilon = 0.01
-num_guesses, low = 0, 0
-high = max(1, x)
-ans = (high + low)/2
+# x = -25
+# epsilon = 0.01
+# num_guesses, low = 0, 0
+# high = max(1, x)
+# ans = (high + low)/2
 
-while abs(ans**2 - x) >= epsilon:
-    print('low =', low, 'high =', high, 'ans =', ans)
-    num_guesses += 1
-    if ans ** 2 < x:
-        low = ans
-    else:
-        high = ans
-    ans = (high + low)/2
+# while abs(ans**2 - x) >= epsilon:
+#     print('low =', low, 'high =', high, 'ans =', ans)
+#     num_guesses += 1
+#     if ans ** 2 < x:
+#         low = ans
+#     else:
+#         high = ans
+#     ans = (high + low)/2
     
-print('number of guesses =', num_guesses)
-print(ans, 'is close to square root of', x)
+# print('number of guesses =', num_guesses)
+# print(ans, 'is close to square root of', x)
 
 
 """
@@ -169,3 +169,127 @@ Figure 3-6 Using bisection search to estimate log base 2
 #         high = ans
 #     ans = (high + low)/2
 # print(ans, 'is close to the log base 2 of', x)
+
+"""
+Figure 3-7 Implementation of Newton-Raphson method
+"""
+# # Newton-Raphson for square root
+# # Find x such that x**2 - 24 is within epsilon of 0.01
+# k = 24
+# epsilon = 0.01
+# guess = k/2
+# num_guesses = 0
+
+# while abs(guess**2 - k) >= epsilon:
+#     guess = guess - ((guess**2) - k)/(2*guess)
+#     num_guesses += 1
+# print('Square root of', k, 'is about', guess)
+# print('Number of guesses', num_guesses)
+ 
+
+"""
+Figure 4-1 Using bisection search to approximate square root of x
+"""    
+# # Find approximation to square root of x
+# x = 25
+# epsilon = 0.01
+
+# if x < 0:
+#     print('Does not exist')
+# else:
+#     low = 0
+#     high = max(1, x)
+#     ans = (high + low)/2
+#     while abs(ans**2 - x) >= epsilon:
+#         if ans**2 < x:
+#             low = ans
+#         else:
+#             high = ans
+#         ans = (high + low)/2
+#     print(ans, 'is close to square root of', x)    
+    
+"""
+Figure 4-2 Summing a square root and a cube root,hard way
+"""
+# # Find square root of x1
+# x1 = 25
+# epsilon = 0.01
+
+# if x1 < 0:
+#     print('Does not exist.')
+# else:
+#     low = 0
+#     high = max(1, x1)
+#     ans = (high + low)/2
+#     while abs(ans**2 - x1) >= epsilon:
+#         if ans**2 < x1:
+#             low = ans 
+#         else:
+#             high = ans
+#         ans = (high + low)/2
+
+# x1_root = ans
+
+# # Find cube root of x2
+# x2 = -8
+# if x2 < 0:
+#     is_pos = False
+#     x2 = -x2
+# else:
+#     is_pos = True
+# low = 0
+# high = (high + low)/2
+# while abs(ans**3 - x2) >= epsilon:
+#     if ans**3 < x2:
+#         low = ans
+#     else:
+#         high = ans
+#     ans = (high + low)/2
+# if is_pos:
+#     x2_root = ans
+# else:
+#     x2_root = -ans
+#     x2 = -x2
+# print('Sum of square root of', x1, 'and cube root of', x2,
+#       'is close to', x1_root+x2_root)
+
+
+"""
+Figure 4-3 A function for finding roots
+"""
+def find_root(x, power, epsilon):
+    # Find interval containing answer
+    if x < 0 and power % 2 == 0:
+        return None # negative number has no even-powered roots
+    low = min(-1, x)
+    high = max(1, x)
+    # Use bisection search
+    ans = (high + low)/2
+    while abs(ans**power - x) >= epsilon:
+        if ans**power < x:
+            low = ans
+        else:
+            high = ans
+        ans = (high + low)/2
+    return ans
+
+"""
+Figure 4-4 Code to test find_root
+"""
+def test_find_root(x_vals, powers, epsilons):
+    for x in x_vals:
+        for p in powers:
+            for e in epsilons:
+                result = find_root(x, p, e)
+                if result == None:
+                    val = 'No root exists'
+                else:
+                    val = 'Okay'
+                    if abs(result**p - x) > e:
+                        val = 'Bad'
+                print(f'x = {x}, power = {p}, epsilon = {e}:{val}')
+
+x_vals = (0.25, 8, -8)
+powers = (1, 2, 3)
+epsilons = (0.1, 0.001, 1)
+test_find_root(x_vals, powers, epsilons)
