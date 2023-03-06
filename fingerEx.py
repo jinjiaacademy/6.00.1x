@@ -168,23 +168,23 @@ positive numbers?
 Hint: think about changing low to ensure that the answer lies within
 the region being searched.
 """
-x = float(input("Enter a number: "))
-epsilon = 0.01
-low = min(-1.0, x)
-high = max(1.0, x)
-guess = (low + high) / 2.0
-num_guesses = 0
+# x = float(input("Enter a number: "))
+# epsilon = 0.01
+# low = min(-1.0, x)
+# high = max(1.0, x)
+# guess = (low + high) / 2.0
+# num_guesses = 0
 
-while abs(guess ** 3 - x) >= epsilon:
-    if guess ** 3 < x:
-        low = guess
-    else:
-        high = guess
-    guess = (low + high) / 2.0
-    num_guesses += 1
+# while abs(guess ** 3 - x) >= epsilon:
+#     if guess ** 3 < x:
+#         low = guess
+#     else:
+#         high = guess
+#     guess = (low + high) / 2.0
+#     num_guesses += 1
 
-print("Number of guesses:", num_guesses)
-print("Approximation to the cube root of", x, "is:", guess)
+# print("Number of guesses:", num_guesses)
+# print("Approximation to the cube root of", x, "is:", guess)
 
 
 """
@@ -195,3 +195,76 @@ he would go down a floor, and try it again. He would do this until
 the egg did not break. At worst, this method requires 102 eggs. 
 Implement a method that at worst uses seven eggs.
 """
+
+
+"""
+Use the find_root function in Figure 4-3 to print the sum of
+approximations to the square root of 25, the cube root of -8,
+and the fourth root of 16. Use 0.001 as epsilon.
+"""
+
+# def find_root(x, power, epsilon):
+#     # find interval containing answer
+#     if x < 0 and power % 2 == 0:
+#         return None
+#     low = min(-1, x)
+#     high = max(1, x)
+#     ans = (high + low)/2
+#     while abs(ans**power - x) >= epsilon:
+#         if ans**power < x:
+#             low = ans
+#         else:
+#             high = ans
+#         ans = (high + low)/2
+#     return ans
+
+# total = (find_root(25, 0.5, 0.001) + find_root(-8, 1/3, 0.001)
+#     + find_root(16, 1/4, 0.001))
+    
+# print(total)
+"""
+Write a function is_in that accepts two strings as arguments and 
+returns True if either string occurs anywhere in the other, and
+False otherwise. Hint: you might want to use the built-in str operator
+in.
+"""
+
+# def is_in(str1, str2):
+#     if str1 in str2 or str2 in str1:
+#         return True
+#     else:
+#         return False
+
+"""
+Write a funciton to test is_in.
+"""
+
+# def test_is_in(str1s, str2s):
+#     for str1 in str1s:
+#         for str2 in str2s:
+#             result = is_in(str1, str2)
+#             if result:
+#                 val = 'True'
+#             else:
+#                 val = 'False'
+#             print(val)
+            
+# str1s = ['app', 'hello', 'jinjia']
+# str2s = ['apple', 'ell', 'nin']
+# test_is_in(str1s, str2s)
+
+"""
+Write a function mult that accepts either one or two ints as 
+arguments. If called with two arguments, the function prints
+the product of the two arguments. If called with one argument,
+it prints that argument.
+"""
+
+def mult(arg1, arg2=False):
+    if arg2:
+        print(arg1*arg2)
+    else:
+        print(arg1)
+        
+mult(2, 4)
+mult(2)
